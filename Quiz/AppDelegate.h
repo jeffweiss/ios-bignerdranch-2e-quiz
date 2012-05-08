@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    int currentQuestionIndex;
+    
+    //the model objects
+    NSMutableArray *questions;
+    NSMutableArray *answers;
+    
+    //the view objects
+    IBOutlet UILabel *questionField;
+    IBOutlet UILabel *answerField;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic, retain) IBOutlet UIWindow *window;
 
+
+- (IBAction)showQuestion:(id)sender;
+- (IBAction)showAnswer:(id)sender;
 @end
